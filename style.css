@@ -1,115 +1,265 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    .container {
-        width: 100%;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #c2e0ff, #ffb3d6);
-        padding: 10px;
-    }
-    
-    .toDo {
-        width: 100%;
-        max-width: 500px;
-        background-color: rgba(255, 255, 255, 0.75);
-        margin: 100px auto 20px;
-        padding: 40px 30px 70px;
-        border-radius: 10px;
-    }
-    
-    .toDo h1 {
-        margin-bottom: 30px;
-        font-size: 30px;
-        color: #232323;
-        display: flex;
-        align-items: center;
-    }
-    
-    .toDo h1 img {
-        width: 30px;
-        margin-left: 10px;
-    }
-    
-    .row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #eaeaea;
-        border-radius: 30px;
-        padding-left: 10px;
-        margin-bottom: 25px;
-    }
-    
-    input {
-        flex: 1;
-        border: none;
-        outline: none;
-        padding: 10px;
-        background: transparent;
-        font-size: 16px;
-    }
-    
-    #tombol {
-        border: none;
-        outline: none;
-        padding: 10px 20px;
-        background: #7f49d7;
-        color: #ffffff;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 40px;
-    }
-    
-    #tombol:hover {
-        background: #d4c2f5;
-        color: #232323;
-    }
-    
-    #listContainer li {
-        list-style: none;
-        padding: 12px 8px 10px 50px;
-        font-size: 17px;
-        border-bottom: 1px solid #ccc;
-        user-select: none;
-        cursor: pointer;
-        position: relative;
-    }
-    
-    #listContainer li::before {
-        content: "\2610";
-        position: absolute;
-        font-size: 22px;
-        left: 10px;
-        bottom: 6px;
-    }
-    
-    #listContainer li.done {
-        color: #888;
-        text-decoration: line-through;
-    }
-    
-    #listContainer li.done::before {
-        content: "\2611";
-        color: #27ae60;
-    }
-    
-    #listContainer li span {
-        position: absolute;
-        right: 0;
-        top: 0px;
-        color: #888;
-        width: 40px;
-        height: 40px;
-        font-size: 22px;
-        line-height: 40px;
-        text-align: center;
-        border-radius: 50%;
-    }
-    
-    #listContainer li span:hover {
-        background: #ccc;
-        color: #fff;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    /* Warna biru gelap dari foto */
+    background: #071b4f;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 20px 40px;
+}
+
+
+.container {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    /* Putih supaya isi mudah dibaca */
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 70px 30px 30px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+.poster-container {
+
+ 
+    position: absolute;
+
+   
+    top: -420px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+
+    padding: 8px;
+
+    /* Biru seperti background foto */
+    background: #071b4f;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
+
+    z-index: 10;
+}
+
+
+.poster {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.header h1 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+
+    color: #071b4f;
+}
+
+
+.header p {
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+
+.todo-section h2 {
+    color: #071b4f;
+
+    margin-bottom: 15px;
+}
+
+
+
+.input-area {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+#todoInput {
+
+    flex: 1;
+
+    padding: 12px;
+
+    font-size: 14px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+
+#todoInput:focus {
+
+    border-color: #071b4f;
+}
+
+
+
+
+#addButton {
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #071b4f;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#addButton:hover {
+
+    background: #ff00e6;
+}
+
+
+
+#todoList {
+
+    list-style: none;
+}
+
+
+
+.todo-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: #f3f3f3;
+
+    border-left: 5px solid #ff00e6;
+
+    border-radius: 8px;
+}
+
+
+
+.todo-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+
+.todo-item.completed span {
+
+    text-decoration: line-through;
+
+    color: #888;
+}
+
+
+
+.delete-button {
+
+    border: none;
+
+    background: #ff00e6;
+
+    color: white;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+.delete-button:hover {
+
+    background: #071b4f;
+}
+
+
+
+.stats {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 2px solid #eee;
+
+    color: #071b4f;
+
+    font-size: 14px;
+}

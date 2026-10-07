@@ -1,27 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list </title>
-    <link rel="stylesheet" href="style.css">
+    <title>To-Do List Dafa</title>
 
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <div class="container">
-        <div class="toDo">
-            <h1>My To Do List <img src="images/icon.png"></h1>
-            <div class="row">
-                <input type="text" id="inputTask" placeholder="Tambahkan to do list">
-                <button id="tombol">tambah</button>
-            </div>
-            <ul id="listContainer">
-            </ul>
-        </div>
-    </div>
+  <body>
+    <main class="container">
+      <!-- FOTO DI ATAS BORDER -->
+      <div class="poster-container">
+        <img
+          src="image\poster-fstvlst-paradoks-diametral.png"
+          alt="Poster FSTVLST Paradoks Diametral"
+          class="poster"
+        />
+      </div>
+
+      <!-- ISI TO DO LIST -->
+      <section class="todo-content">
+        <header class="header">
+          <h1>TO-DO LIST</h1>
+
+          <p>Catat kegiatanmu agar lebih teratur</p>
+        </header>
+
+        <section class="todo-section">
+          <h2>Daftar Kegiatan</h2>
+
+          <div class="input-area">
+            <input
+              type="text"
+              id="todoInput"
+              placeholder="Masukkan kegiatan..."
+            />
+
+            <button id="addButton">Tambah</button>
+          </div>
+
+          <!-- Daftar kegiatan -->
+          <ul id="todoList"></ul>
+
+          <!-- Statistik -->
+          <div class="stats">
+            <p>
+              Total:
+              <span id="totalTask">0</span>
+            </p>
+
+            <p>
+              Selesai:
+              <span id="completedTask">0</span>
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
